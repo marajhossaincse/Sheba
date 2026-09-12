@@ -46,3 +46,25 @@ the dashboard for that role.
 - `docker compose down -v` — stop Postgres **and wipe the local dev data**
 - `cd backend && npx prisma studio` — browse the local DB in a GUI
 - `cd backend && npx prisma migrate dev --name <change>` — create a new migration after editing `prisma/schema.prisma`
+
+## To-do
+
+### Done
+- [x] Architecture planned (roles, permissions model, data model)
+- [x] Local Postgres via Docker Compose
+- [x] Backend: signup / login / refresh / logout / me, JWT in httpOnly cookies
+- [x] Role-based auth middleware (`authenticate` + `authorize`) and a central permissions map
+- [x] Frontend: signup/login forms, protected routes, one dashboard per role
+- [x] Verified end-to-end locally, and shareable over a temporary tunnel
+
+### Next up
+- [ ] Replace open self-signup + role dropdown with a real flow: Secretary creates the company, then invites Directors/Shareholders by email
+- [ ] Password reset / forgot password flow
+- [ ] First real Secretary feature: create & manage a document/record (defines the write-side pattern other features will follow)
+- [ ] Director/Shareholder read-only views for whatever the Secretary creates, plus download
+- [ ] File storage for uploaded/generated documents (e.g. board resolutions, share certificates)
+- [ ] Audit log surfaced in the UI (who changed what, when) — table already exists, not yet shown anywhere
+- [ ] Basic form validation/error states polish on the frontend
+- [ ] Automated tests (backend auth flow at minimum)
+- [ ] Real deployment (free-tier hosting) once ready to move off localhost permanently
+- [ ] Revisit single-company assumption if this ever needs to support more than one company
