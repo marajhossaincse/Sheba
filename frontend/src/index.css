@@ -152,7 +152,44 @@ button {
   background: var(--card-bg);
 }
 
-.dashboard main {
+.dashboard-body {
+  display: flex;
+  align-items: flex-start;
+}
+
+.dashboard-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  padding: 32px 16px;
+  border-right: 1px solid var(--border);
+  min-height: calc(100vh - 73px);
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-link {
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.sidebar-link:hover {
+  background: var(--bg);
+}
+
+.sidebar-link.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+.dashboard-body main {
+  flex: 1;
   max-width: 800px;
   margin: 32px auto;
   padding: 0 32px;

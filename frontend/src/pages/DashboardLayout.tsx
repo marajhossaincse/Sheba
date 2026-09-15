@@ -5,10 +5,12 @@ import { useAuth } from "../auth/AuthContext";
 export function DashboardLayout({
   title,
   badge,
+  sidebar,
   children,
 }: {
   title: string;
   badge: string;
+  sidebar?: ReactNode;
   children: ReactNode;
 }) {
   const { user, logout } = useAuth();
@@ -31,7 +33,10 @@ export function DashboardLayout({
           <button onClick={handleLogout}>Log out</button>
         </div>
       </header>
-      <main>{children}</main>
+      <div className="dashboard-body">
+        {sidebar && <aside className="dashboard-sidebar">{sidebar}</aside>}
+        <main>{children}</main>
+      </div>
     </div>
   );
 }

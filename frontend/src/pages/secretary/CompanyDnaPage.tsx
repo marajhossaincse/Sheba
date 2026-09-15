@@ -1,17 +1,17 @@
 import { DashboardLayout } from "../DashboardLayout";
 import { SecretarySidebar } from "./SecretarySidebar";
 
-export function SecretaryDashboard() {
+export function CompanyDnaPage() {
   return (
     <DashboardLayout
-      title="Secretary Dashboard"
+      title="Company DNA"
       badge="Full access — create & edit"
       sidebar={<SecretarySidebar />}
     >
       <p>
-        This is where the secretary will create and manage company records —
-        statutory registers, board resolutions, share transfers, and more, as
-        those features are built.
+        Company DNA will hold the company's core profile — incorporation
+        details, structure, directors, and shareholders — as the source of
+        truth other features build on. Not built yet.
       </p>
     </DashboardLayout>
   );

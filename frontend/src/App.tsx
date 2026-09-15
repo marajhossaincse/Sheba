@@ -5,6 +5,7 @@ import { LoginPage } from "./pages/LoginPage";
 import { SignupPage } from "./pages/SignupPage";
 import { RootRedirect } from "./pages/RootRedirect";
 import { SecretaryDashboard } from "./pages/secretary/SecretaryDashboard";
+import { CompanyDnaPage } from "./pages/secretary/CompanyDnaPage";
 import { DirectorDashboard } from "./pages/director/DirectorDashboard";
 import { ShareholderDashboard } from "./pages/shareholder/ShareholderDashboard";
 
@@ -19,6 +20,7 @@ export default function App() {
 
           <Route element={<ProtectedRoute role="SECRETARY" />}>
             <Route path="/app/secretary" element={<SecretaryDashboard />} />
+            <Route path="/app/secretary/company-dna" element={<CompanyDnaPage />} />
           </Route>
           <Route element={<ProtectedRoute role="DIRECTOR" />}>
             <Route path="/app/director" element={<DirectorDashboard />} />
